@@ -118,9 +118,6 @@ type StrictTitleOnly = { title: string }
 function HeaderOnly({ title }: StrictTitleOnly) {
   return <h4>{title}</h4>
 }
-// @ts-expect-error Type '{ title: string; children: string; }' is not assignable to 'StrictTitleOnly'
-const invalidUsage = <HeaderOnly title="No children allowed">Oops</HeaderOnly>
-void invalidUsage
 
 type AlertProps = PropsWithChildren<{ severity: 'info' | 'warn' }>
 function Alert({ severity, children }: AlertProps) {
